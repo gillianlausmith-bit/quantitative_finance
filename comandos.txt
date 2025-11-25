@@ -1,0 +1,10 @@
+#==== crear ambiente virtual ====
+
+##windows
+python -m venv .venv
+
+#==== activar ambeinte virtual ====
+era para mac xd
+
+#==== isntalar librerias ====
+pip install -r requirements.txt
