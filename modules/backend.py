@@ -257,7 +257,7 @@ def tickers_by_issuer(issuer:str) -> pd.DataFrame:
     WHERE EMISOR = '{issuer}'
     """
 
-db = DB_Investments()
-df = db.execute_query(query)
+    db = DB_Investments()
+    df = db.execute_query(query)
 
-return df 
+    return df 

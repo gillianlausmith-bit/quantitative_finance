@@ -22,3 +22,10 @@ git commit -m "rama actualizada"
 #Actualizar branch
 
 git push origin main
+
+
+
+
+$ python3 -m venv .venv
+source ./.venv/bin/activate
+pip3 install -r ./requirements.txt
