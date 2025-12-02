@@ -27,6 +27,8 @@ if __name__ =='__main__':
     # nivel de confianza
     confidence = 0.05
 
+    lst = []
+
     for portfolio in [list_tickers_rf, list_tickers_rv]:
         print(portfolio)
         
@@ -35,13 +37,13 @@ if __name__ =='__main__':
         print(df.head(5))
 
         vector_w = np.array([1/len(portfolio)] * len(portfolio))
-        print(vector_w)
 
         # calcular volatilidad
         sigma = portfolio_volatility( df=df, vector_w=vector_w)
-        print(sigma)
 
-        # calcular VaR
+        # calcular VaR (medida de riesgo de mercado)
         var = VaR(sigma=sigma, confidence=confidence)
-        print(var)
-
+        var = np.abs(var)
+        var_mensual = var * np.sqrt(20)
+        lst.append(var_mensual)
+        
