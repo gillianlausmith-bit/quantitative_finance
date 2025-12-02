@@ -46,4 +46,11 @@ if __name__ =='__main__':
         var = np.abs(var)
         var_mensual = var * np.sqrt(20)
         lst.append(var_mensual)
-        
+    
+    df_final = pd.DataFrame(
+        {
+            'PORTAFOLIO': ['iShares Renta Fija', 'iShares Renta Variable'],
+            f'Value At Risk: {1-confidence}%': lst
+        }
+    )
+    print(df_final)
