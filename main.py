@@ -53,4 +53,7 @@ if __name__ =='__main__':
             f'Value At Risk: {1-confidence}%': lst
         }
     )
+    df_final = df_final.sort_values(
+        by=f'Value At Risk: {1-confidence}%',
+        ascending=False)
     print(df_final)
